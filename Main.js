@@ -4,6 +4,7 @@ var liv = 3;
 var s;
 var spilType = undefined;
 var mode = undefined;
+let canvasZoom = screen.width;
 
 
 if(sessionStorage.getItem('high score') == null){
@@ -36,6 +37,10 @@ function setup() {
 }
 
 function draw(){
+  canvasZoom = screen.width;
+  currentScalling = windowWidth/canvasZoom;
+  scale(currentScalling); 
+  console.log(currentScalling);
 
   if (mode == 0){
     startSkaerm();
