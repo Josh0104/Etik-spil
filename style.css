@@ -5,3 +5,100 @@ html, body {
 canvas {  
   display: block;
 }
+
+.button {
+  position: absolute;
+  font-size: 50px;
+  width: 250px;
+  height: 100px;
+  text-align: center; 
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+.button:hover{
+  box-shadow: 0 20px 76px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#buttonNormal {
+  top:35%;
+  background-color: white;
+}
+    #buttonNormal:hover{  
+      background-color:rgb(10, 210, 10);
+      color: white;
+    }
+
+#buttonNeutral{
+  top:45%;
+  background-color:gray;
+  color: white;
+}
+
+    #buttonNeutral:hover{
+      background-color:rgb(10, 210, 10);
+    }
+
+#buttonRacist {
+  top: 55%;
+  background-color: black;
+  color: white;
+}
+    #buttonRacist:hover {
+      background-color:rgb(10, 210, 10);
+    }
+
+#buttonInfo{
+  top: 65%;
+  background-color: orange;
+  color: white;
+}
+    #buttonInfo:hover{
+      background-color:rgb(10, 210, 10);
+      color:white;
+    }
+
+#buttonGenstart{
+  top: 70%;
+  background-color: gray;
+}
+    #buttonGenstart:hover {
+      color:white;
+      background-color: rgb(0, 210, 10);
+    }
+
+#buttonTilbage{
+  position:relative;
+  top: 70%;
+  background-color: gray;
+  color:white;
+}
+ #buttonTilbage:hover{
+      background-color: rgb(255, 1, 0);
+      color:white;
+    }
+
+.tekst{
+  position: absolute;
+  text-align: center;
+  font-family: cursive;
+}
+
+#titel{
+  left: 0%;
+  width:100%;
+  font-size: 100px;
+  color:white;
+}
+
+#startTekst{
+  width: 100%;
+  left: 0%;
+  font-size: 50px;
+  color: white;
+  top:20%;
+  cursor: default; 
+}
+

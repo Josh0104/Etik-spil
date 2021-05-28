@@ -1,18 +1,36 @@
-<!DOCTYPE html><html lang="en"><head>
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
+<!DOCTYPE html> 
+<title>Etik spil</title>
+<link rel="icon" href="data:image/png;base64,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">
+<html lang="en"><head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     
-
 
   </head>
   <body>
     <script src="Biler.js"></script>
     <script src="Player.js"></script>
     <script src="Point.js"></script>
+    <script src="Skaerm.js"></script>
     <script src="Main.js"></script>
 
-  
+    <h1 id="titel" class='tekst'>Etik spil</h1>
+    <p id="startTekst" class='tekst'> Vælg en spilletilstand for at starte spillet </p>
+
+    <div class ="button-group">
+      <button onclick="startGameNormal()" id='buttonNormal' class='button'> Normal</button>
+      <button onclick ="startGameNeutral()" id='buttonNeutral' class='button'> Neutral</button>
+      <button onclick="startGameEkstrem()" id= 'buttonRacist' class ='button'> Ekstrem</button>
+      <!-- <button onclick="infoKnap()" id = 'buttonInfo' class = 'button'> Info </button> -->
+      <a href="info.html">
+      <button id = 'buttonInfo' class = 'button'> Info </button>
+      </a>
+    </div>
+
+    <button onclick="genstartKnap()" id='buttonGenstart' class ='button' style.visibilty ='hidden' > Spil igen</button>
+    <!-- <button onclick='tilbageKnap()' id = 'buttonTilbage' class = 'button'> Tilbage</button> -->
 
 </body></html>
