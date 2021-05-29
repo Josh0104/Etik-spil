@@ -5,6 +5,7 @@ var s;
 var spilType = undefined;
 var mode = undefined;
 let canvasZoom = screen.width;
+//fnjoewnfwenfiuewnfiewu
 
 if(localStorage.getItem('high score') == null){
   var high_score = 0;
