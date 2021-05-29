@@ -70,27 +70,10 @@ function draw(){
     function keyPressed(){
         spilLyd = false
 
-      if (keyCode === ENTER) {
-        if(mode==0){
-        mode=1;
-       } }
-
       if ( key=== "p" || key === "P"){
           mode =2;
         }
-
-      if (key === " "){
-            mode=1;
-          }
       
-      // if (key === "h") {
-      //   if (!spilLyd) {
-
-      //   dyt = createAudio('Lyd/Dyt.mp3')
-      //   dyt.play(true);
-      //   spilLyd = true
-      //   }
-      // }
       }     
 
         function genstartKnap() {
