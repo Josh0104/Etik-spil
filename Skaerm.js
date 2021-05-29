@@ -1,18 +1,41 @@
+function startSkaerm() {
+
+  background(53,75,213)
+  if(high_score > 0){
+  document.getElementById('highScoreTekst').style.visibility = 'visible';
+  document.getElementById('highScoreTekst').innerHTML = "Din nuværende high score er " + high_score;
+      } else {
+        document.getElementById('highScoreTekst').style.visibility = 'hidden';
+      }
+        document.getElementById('buttonGenstart').style.visibility = 'hidden';
+      }
+
 function spilSkaerm(){
 
-    background(100)
+  document.getElementById('highScoreTekst').style.visibility = 'hidden';
+  document.getElementById('antalPoint').style.visibility ='visible';
+  document.getElementById('highScorePoint').style.visibility ='visible';
+  document.getElementById('antalPoint').innerHTML = antalPoint + " point";
+  document.getElementById('highScorePoint').innerHTML = "High score " + high_score + " point";
+  document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
+  document.getElementById('buttonFullScreen').style.visibility = 'hidden';  
 
-  
+  if(antalPoint >= 25 && antalPoint < 50){
+        background(75);
+      } else if (antalPoint >= 50 && antalPoint < 75){
+        background(50);
+      } else if (antalPoint >= 75 && antalPoint < 100){
+        background(25);
+      } else if (antalPoint >= 100){
+        background(0);
+      } else{ 
+        background(100);
+  }
+
+
     fill(255) 
     rect(width/2 - 300,0,25,9000)
     rect(width/2+300,0,25,9000)
-  
-    fill(255);
-    textSize(75)
-    text(antalPoint +" "+ "point",150,400,800,700)
-    if(high_score > 0){
-      text("Highscore: " + high_score + " point", 325,500,800,700 ) 
-    }
   
       player1.move();
       var px = player1.getPosX()
@@ -114,40 +137,10 @@ function spilSkaerm(){
     textAlign(CENTER);
     text(t, width/2, height/2, 800, 300);
     
-    sessionStorage.setItem('high score',high_score);
-  
-    // button = createButton("Spil igen");
-    // button.mousePressed(genstartKnap);
-    // button.size(200,100);
-    // button.position(width/2 - 100, height/2 + 5);
-    // button.style("font-family", "Bodoni");
-    // button.style("font-size", "48px");
-    // button.style('background-color', color('rgb(0,221,0)'));
+    localStorage.setItem('high score',high_score);
   
     document.getElementById('buttonGenstart').style.visibility = 'visible';
+    document.getElementById('antalPoint').style.visibility ='hidden';
+    document.getElementById('highScorePoint').style.visibility ='hidden';
   
-  }
-  
-  //Funktioner---------
-  
-  function infoSkaerm(){
-  
-    background(10,120,10)
-  
-  
-    let t1 = "Du styrer bilen med piletasterne eller WASD"
-    let t2 = "Du skal prøve at samle så mange point som muligt"
-    let t3 = "Du har 3 liv, og hvis du mister alle din liv, så er spillet slut"
-    let t4 = "Tryk på p for at sætte spillet på pause"
-  
-    textSize(50)
-    fill(255);
-    rectMode(CENTER);
-    textAlign(CENTER);
-    text(t1, width/2, height/2 - 150, 800, 300);
-    text(t2, width/2, height/2 - 0, 1000, 300);
-    text(t3, width/2, height/2 + 150, 1000, 300);
-    text(t4, width/2, height/2 + 300, 1000, 300);
-  
-    document.getElementById('buttonTilbage').style.visibility = 'visible';
   }

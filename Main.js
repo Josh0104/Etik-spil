@@ -5,15 +5,19 @@ var s;
 var spilType = undefined;
 var mode = undefined;
 
-
-if(sessionStorage.getItem('high score') == null){
+if(localStorage.getItem('high score') == null){
   var high_score = 0;
 }else {
-  high_score = sessionStorage.getItem('high score');
+  high_score = localStorage.getItem('high score');
   }
 
 function preload(){
 imgHjerte = loadImage('Img/hjerteLiv.png')
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  console.log("This get called");
 }
 
 function startUp(){
@@ -24,7 +28,7 @@ function setup() {
 
   //createCanvas(1536, 864);
   createCanvas(windowWidth,windowHeight)
-
+  document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
   startUp() //Startskærm
   player1 = new Player();
   Point1 = new Point(random(width/2-100,width/2+100),0);
@@ -32,6 +36,11 @@ function setup() {
 
   frameRate(60)
   background(100);
+
+  document.getElementById('antalPoint').style.visibility ='hidden';
+  document.getElementById('highScorePoint').style.visibility ='hidden';
+
+
 
 }
 
@@ -49,38 +58,10 @@ function draw(){
   } else if (mode == 4){
     slutSkaerm();
 
-  } else if (mode == 5){
-    infoSkaerm();
-
-  }
-
+  } 
     }
       
 //funktioner 
-function startSkaerm() {
-
-  background(53,75,213)
-
-  // textSize(50);
-  // let t = "Vælg en spilletilstand for at starte spillet";
-  // fill(255);
-  // rectMode(CENTER);
-  // textAlign(CENTER);
-  // text(t, width/2, height/2, 500, 300); // Text wraps within text box
-
-  if(high_score != 0){
-    let t = "Din nuværende highscore er " + high_score + " point"
-    fill(255);
-    rectMode(CENTER);
-    textAlign(CENTER);
-    text(t, width/2, height/2 + 450, 500, 300);
-  
-  }
-  document.getElementById('buttonGenstart').style.visibility = 'hidden';
-  // document.getElementById('buttonTilbage').style.visibility = 'hidden';
-}
-
-
     function keyPressed(){
         spilLyd = false
 
@@ -117,18 +98,15 @@ function startSkaerm() {
          Point1.nulstille();
 
          showObjects();
+         if(window.fullscreen){
+          document.getElementById('buttonExitFullScreen').style.visibility = 'visible';
+          document.getElementById('buttonFullScreen').style.visibility = 'hidden';  
+        } else {
+          document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
+          document.getElementById('buttonFullScreen').style.visibility = 'visible';  
+        }
 
           }
-
-        function infoKnap(){
-            mode = 5;
-            hideObjects(); 
-        }
-
-        function tilbageKnap(){
-          mode = 0;
-          showObjects();
-        }
 
         function startGameNormal(){
           mode = 1;
@@ -154,7 +132,7 @@ function startSkaerm() {
         document.getElementById('startTekst').style.visibility = 'hidden';
         document.getElementById('buttonNormal').style.visibility = 'hidden';
         document.getElementById('buttonNeutral').style.visibility = 'hidden';
-        document.getElementById('buttonRacist').style.visibility = 'hidden'; 
+        document.getElementById('buttonEkstrem').style.visibility = 'hidden'; 
         document.getElementById('buttonInfo').style.visibility = 'hidden'; 
 
         }
@@ -165,10 +143,41 @@ function startSkaerm() {
         document.getElementById('startTekst').style.visibility = 'visible';
         document.getElementById('buttonNormal').style.visibility = 'visible';
         document.getElementById('buttonNeutral').style.visibility = 'visible';
-        document.getElementById('buttonRacist').style.visibility = 'visible'; 
+        document.getElementById('buttonEkstrem').style.visibility = 'visible'; 
         document.getElementById('buttonInfo').style.visibility = 'visible';
 
       }
+
+
+var elem = document.documentElement;
+function openFullscreen() {
+  document.getElementById('buttonExitFullScreen').style.visibility = 'visible';
+  document.getElementById('buttonFullScreen').style.visibility = 'hidden';  
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
+  document.getElementById('buttonFullScreen').style.visibility = 'visible';  
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+} 
+// else {
+//   document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
+//   document.getElementById('buttonFullScreen').style.visibility = 'visible';  
+// }
+   console.log(document.fullscreen)
 
 
 /*Mode er forskellige skærme 

@@ -1,64 +1,110 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: rgb(53,75,213);
+  overflow: hidden;
 }
+
 canvas {  
-  display: block;
+  display:block;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 800px; */
+}
+
+.button-group {
+  position: absolute;
+  top:50%;
+  left:50%;
+  right:50%
 }
 
 .button {
-  position: absolute;
+  position: fixed;
+  border: 2px solid black;
   font-size: 50px;
   width: 250px;
-  height: 100px;
+  height: 75px;
   text-align: center; 
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   left: 0;
   right: 0;
-  cursor: pointer;
+  cursor: pointer; 
+  display: block;
+  color:white;
+  font-family: cursive;
+  
 }
 .button:hover{
   box-shadow: 0 20px 76px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        border-color: white
 }
 
 #buttonNormal {
-  top:35%;
-  background-color: white;
+  top:40%;
+  background-color:rgb(10, 210, 10);
 }
     #buttonNormal:hover{  
-      background-color:rgb(10, 210, 10);
       color: white;
     }
 
 #buttonNeutral{
-  top:45%;
-  background-color:gray;
-  color: white;
+  top:52%;
+  background-color:	rgb(255,127,80);
 }
 
     #buttonNeutral:hover{
-      background-color:rgb(10, 210, 10);
+      color: white;
     }
 
-#buttonRacist {
-  top: 55%;
-  background-color: black;
-  color: white;
+#buttonEkstrem {
+  top: 64%;
+  background-color:rgb(220,20,60);
 }
-    #buttonRacist:hover {
-      background-color:rgb(10, 210, 10);
+    #buttonEkstrem:hover {
+      color: white;
     }
 
 #buttonInfo{
-  top: 65%;
-  background-color: orange;
+  background-color: purple;
   color: white;
+  position: absolute;
+  text-align: center;
+  height: 100px;
+  width: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  right: 0;
+  bottom: 0;
+  font-size: 50px;
+  border: 2px solid black;
 }
     #buttonInfo:hover{
-      background-color:rgb(10, 210, 10);
       color:white;
+      border-color: white;
+
     }
+
+.button1{
+  position: absolute;
+  text-align: center;
+  height: 100px;
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  left: 0;
+  bottom: 0;
+  font-size: 30px;
+}
+
+
 
 #buttonGenstart{
   top: 70%;
@@ -69,16 +115,8 @@ canvas {
       background-color: rgb(0, 210, 10);
     }
 
-#buttonTilbage{
-  position:relative;
-  top: 70%;
-  background-color: gray;
-  color:white;
-}
- #buttonTilbage:hover{
-      background-color: rgb(255, 1, 0);
-      color:white;
-    }
+
+/* Tekst*/
 
 .tekst{
   position: absolute;
@@ -87,9 +125,10 @@ canvas {
 }
 
 #titel{
+  position: absolute;
   left: 0%;
   width:100%;
-  font-size: 100px;
+  font-size: 75px;
   color:white;
 }
 
@@ -102,3 +141,25 @@ canvas {
   cursor: default; 
 }
 
+#highScoreTekst {
+  width:100%;
+  left:0%;
+  top:70%;
+  font-size: 50px;
+  color:white
+}
+
+#antalPoint{
+  font-size: 50px;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: white;
+}
+
+#highScorePoint{
+  font-size: 50px;
+  margin-left: 20px;
+  margin-top: 60px;
+  color: white;
+
+}
