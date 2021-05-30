@@ -3,10 +3,34 @@
 <link rel ="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1024px-Infobox_info_icon.svg.png">
 <html lang="en">
 <head>
-<script src='Translate.js'></script>
+
+
 </head>
 
 <body style ='background-color:whitesmoke;'>
+
+ 
+
+    <style>
+        #engelskButton{
+        position: absolute;
+        background-image: url('Img/english_flag.webp');
+        height:96px;
+        width: 128px;
+        right:10px;
+        margin-right:0px;
+         }
+
+        #danskButton{
+        position: absolute;
+        background-image: url('Img/danish_flag.png');
+        height:96px;
+        width: 128px;
+        right:10px;
+        margin-right:0px;
+        margin-bottom:100px;
+        }
+    </style>
     <div style="margin-left: 50px; margin-bottom: 20px;" >
         <h1 style="font-size: 50px">Hej</h1>
         <div style = "font-size: 35px; text-align: left;">
@@ -35,8 +59,6 @@
         <p id = 'p7'>
             Du må meget gerne skrive en kommentar om spillet til mig eller hvis der er en bug jeg skal fikse. Jeg skal nemlig til eksamen om etik i computerspil tirsdag d. 1. juni, 2021 :)
         </p>
-            <br>
-            <br>
         <p>
             Email: jjmcalba02@gmail.com
             <br>
@@ -62,11 +84,18 @@
     </a>
     <style>
         #buttonTilbage:hover{
-            background-color: red;
+            background-color: rgb(224, 7, 7);
             color:white;
         }
+
     </style>
 
-    
+<button id='engelskButton' onclick="engelsk()"></button>
+<button id ='danskButton' onclick="dansk()"></button>
+
+
+
+
+<script src='Translate.js'></script>
 </body>
 </html>
