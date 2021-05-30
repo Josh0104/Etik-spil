@@ -3,7 +3,7 @@ function startSkaerm() {
   background(53,75,213)
   if(high_score > 0){
   document.getElementById('highScoreTekst').style.visibility = 'visible';
-  document.getElementById('highScoreTekst').innerHTML = "Din nuværende high score er " + high_score;
+  document.getElementById('highScoreTekst').innerHTML = "Din nuværende high score er " + high_score + " point";
       } else {
         document.getElementById('highScoreTekst').style.visibility = 'hidden';
       }
