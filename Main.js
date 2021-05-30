@@ -18,7 +18,6 @@ imgHjerte = loadImage('Img/hjerteLiv.png')
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  console.log("This get called");
 }
 
 function startUp(){
@@ -49,7 +48,6 @@ function draw(){
   canvasZoom = screen.width;
   currentScalling = windowWidth/canvasZoom;
   scale(currentScalling); 
-  console.log(currentScalling);
 
   if (mode == 0){
     startSkaerm();
@@ -165,8 +163,6 @@ function closeFullscreen() {
 //   document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
 //   document.getElementById('buttonFullScreen').style.visibility = 'visible';  
 // }
-   console.log(document.fullscreen)
-
 
 /*Mode er forskellige skærme 
 
