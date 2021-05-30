@@ -82,7 +82,8 @@ function draw(){
          Point1.nulstille();
 
          showObjects();
-         if(window.fullscreen){
+         
+         if(document.fullscreenElement != null){
           document.getElementById('buttonExitFullScreen').style.visibility = 'visible';
           document.getElementById('buttonFullScreen').style.visibility = 'hidden';  
         } else {
@@ -157,15 +158,10 @@ function closeFullscreen() {
     document.msExitFullscreen();
   }
 } 
-// else {
-//   document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
-//   document.getElementById('buttonFullScreen').style.visibility = 'visible';  
-// }
 
 /*Mode er forskellige skærme 
 
 mode 0 = startskærm 
 mode 1 = spillet 
 mode 2 = pasue skærm 
-mode 3 = død særm 
-mode 4 = instruktion skærm */
+mode 3 = slut skærm  */
