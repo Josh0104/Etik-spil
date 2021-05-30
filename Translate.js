@@ -1,7 +1,7 @@
 function engelsk(){
     document.getElementById('p1').innerHTML = "I made this game to find out how a computer game can be ethically incorrect when it comes to the game's functional values ​​and aspects.";
 
-    document.getElementById('p2').innerHTML = "Note that this game does not reflect my opinion in any case, and is made on the basis of my SOP project. The game here should help you understand how and when to push ethical boundaries by adding audiovisual elements.";
+    document.getElementById('p2').innerHTML = "Note that this game does not reflect my opinion in any case, and is made on the basis of my SOP project. The game here should help you understand how to push ethical boundaries by adding audiovisual elements.";
 
     document.getElementById('p3').innerHTML = 'The game is made in three different versions. They all have the same mechanics where you control the blue car using the arrow keys or the "a" and "d" keys. The difference between the three games is their graphic elements.';
 
@@ -16,15 +16,13 @@ function engelsk(){
     document.getElementById('danskButton').style.visibility = 'visible';
     document.getElementById('engelskButton').style.visibility = 'hidden';
 
-
-
 }
 
 function dansk(){
 
     document.getElementById('p1').innerHTML = "Jeg har lavet dette spil for at finde ud af hvordan et computerspil kan være etisk ukorrekt, når det kommer til spillets funktionelle værdier og apsekter.";
 
-    document.getElementById('p2').innerHTML = "Dette spil afspejler ikke min mening under alle omstændigheder, og er lavet på baggrund af min SOP projekt. Spillet her skal hjælpe med at forstå hvordan og hvornår man rykker etiske grænser ved tilføjelse af audiovisuelle elementer.";
+    document.getElementById('p2').innerHTML = "Dette spil afspejler ikke min mening under alle omstændigheder, og er lavet på baggrund af min SOP projekt. Spillet her skal hjælpe med at forstå hvordan man kan rykke etiske grænser ved tilføjelse af audiovisuelle elementer. ";
 
     document.getElementById('p3').innerHTML = 'Spillet er lavet i tre forskellige versioner. De alle har den samme mekanik, hvor du styrer den blå bil ved hjælp af piletasterne eller tasterne "a" og "d". Forskellen mellem de tre spil er deres grafiske elementer.';
 

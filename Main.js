@@ -31,7 +31,7 @@ function setup() {
   document.getElementById('buttonExitFullScreen').style.visibility = 'hidden';
   startUp() //Startskærm
   player1 = new Player();
-  Point1 = new Point(random(width/2-100,width/2+100),0);
+  Point1 = new Point(random(width/2-100,width/2+100));
   bil1 = new Biler();
 
   frameRate(60)
