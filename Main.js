@@ -40,8 +40,6 @@ function setup() {
   document.getElementById('antalPoint').style.visibility ='hidden';
   document.getElementById('highScorePoint').style.visibility ='hidden';
 
-
-
 }
 
 function draw(){
