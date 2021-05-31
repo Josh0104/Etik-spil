@@ -6,13 +6,14 @@ class Biler {
     this.w;
     this.h;
     this.roedBil = loadImage('Img/roedBil.png');
-    this.hvidMand = loadImage('Img/hvidMenneske.png');
+    this.hvidMandArray = [loadImage('Img/hvid_mand0.png'),loadImage('Img/hvid_mand1.png'),loadImage('Img/hvid_mand2.png')];
     this.antalPoint;
     this.newPoint = 10;
     this.currentSpeed = 5;
     this.newSpeed = 2.5;
     this.liv;
-
+    this.bool = true;
+    this.ii = Math.floor(Math.random()*this.hvidMandArray.length - 0 );
     }
 
     koere(xx,yy){
@@ -30,9 +31,18 @@ class Biler {
             fill(255);
             ellipse(this.x, this.y, this.w, this.h)
         }else if (spilType == 2){
-            this.h = 200
+            this.h = 200;
             this.w = 100;
-            image(this.hvidMand,this.x,this.y,this.w,this.h)
+
+            if(this.bool){
+
+            this.ii = Math.floor(Math.random()*this.hvidMandArray.length - 0 )
+
+            this.bool = false;
+
+            }
+            image(this.hvidMandArray[this.ii],this.x,this.y,this.w,this.h);
+            // image(this.hvidMand,this.x,this.y,this.w,this.h)
         }
 
 }

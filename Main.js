@@ -1,10 +1,11 @@
 var pointLyd 
 var antalPoint = 0;
 var liv = 3;
-var s;
 var spilType = undefined;
 var mode = undefined;
 let canvasZoom = screen.width;
+var scream = 1; 
+var ii = 0;
 
 if(localStorage.getItem('high score') == null){
   var high_score = 0;
@@ -158,6 +159,9 @@ function closeFullscreen() {
     document.msExitFullscreen();
   }
 } 
+
+
+
 
 /*Mode er forskellige skærme 
 

@@ -55,13 +55,26 @@ function spilSkaerm(){
           Point1.point1();
           }
         //console.log(" Afstand:" + " " + d)
-        //if( (px - pointx) < 0.5 && (py - pointy) < 0.5) {
         if( d_Player_Point  < 100 ) { //Hvis du rammer point
           //console.log("Du fik 1 point" + height)
-        //Point1.getPosX(random(0,444));
-          pointLyd = createAudio('Lyd/PointSound.mp3');
-          pointLyd.volume(0.5)
-          pointLyd.autoplay(true);
+          
+              if(spilType != 2){
+              pointLyd = createAudio('Lyd/PointSound.mp3');
+              pointLyd.volume(0.5)
+              pointLyd.autoplay(true);
+              } else {
+                    if (scream == 1){
+                    pointLyd = createAudio('Lyd/woman_scream_1.mp3');
+                    // pointLyd.volume(0.5)
+                    pointLyd.autoplay(true);
+                    scream = 2
+                  } else{
+                    pointLyd = createAudio('Lyd/woman_scream_2.mp3');
+                    pointLyd.volume(0.5)
+                    pointLyd.autoplay(true);
+                    scream = 1
+                  }
+              }
           antalPoint ++;
           Point1.point1(random(width/2-200,width/2+200),0);
 
@@ -69,10 +82,12 @@ function spilSkaerm(){
           if(antalPoint >= high_score) {
               high_score = antalPoint;
           }
+          Point1.bool = true;
         }   
   
         if (pointy - 100 > py ) { // Hvis du misser point
           Point1.point1(random(width/2-200,width/2+200),0)
+          Point1.bool = true;
         }
           
             if (bil1 != null ) {
@@ -86,10 +101,12 @@ function spilSkaerm(){
               bilRammerLyd.autoplay(true);
               liv --;
               //console.log("Du rammer bilen, du har nu " + " " + liv + "liv tilbage")
+              bil1.bool = true;
             }
   
             if (bilY - 200 > py ){
               bil1.koere(random(width/2-200,width/2+200),0)
+              bil1.bool = true;
             }
   
             if (liv == 3) {
