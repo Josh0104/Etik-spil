@@ -160,9 +160,6 @@ function closeFullscreen() {
   }
 } 
 
-
-
-
 /*Mode er forskellige skærme 
 
 mode 0 = startskærm 
